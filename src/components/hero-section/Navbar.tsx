@@ -1,11 +1,12 @@
 "use client";
 
-import ArrowRight from "@/public/arrow-right";
+import ArrowRight from "@/public/icons/arrow-right";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import BurgerMenu from "./BurgerMenu";
 
 const logoUrl =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/v1732522765/fm-portfolio-assets/fm-logo.png";
+  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/ce2jz2xgl4fttrz8ccrk";
 
 const textMotion = {
   initial: {
@@ -40,7 +41,7 @@ const arrowMotion = {
 export default function Navbar() {
   return (
     <div
-      className="flex justify-between items-center w-screen px-8 py-3 font-cabin"
+      className="sticky flex items-center justify-between bg-[#f9f5f2] px-5 py-3 font-cabin lg:px-16"
       style={{ fontVariationSettings: '"wght" 700' }}
     >
       {/* logo */}
@@ -49,22 +50,27 @@ export default function Navbar() {
           src={logoUrl}
           width={35}
           height={300}
-          quality={90}
+          quality={100}
           alt="Fath & Mayang Production main logo, a startup logo for web dev, react dev"
         />
-        <h2 className="text-xl font-coolvetica">fath & mayang production</h2>
+        <h2 className="hidden font-coolvetica text-xl lg:block">
+          fath & mayang production
+        </h2>
       </div>
 
+      {/* burgermenu */}
+      <BurgerMenu />
+
       {/* menu */}
-      <div className="flex flex-row gap-x-4">
+      <div className="hidden flex-row gap-x-4 lg:flex">
         <motion.button
-          className="flex items-center cursor-pointer pr-3 overflow-hidden"
+          className="flex cursor-pointer items-center overflow-hidden pr-3"
           initial="rest"
           whileHover="hover"
           animate="rest"
         >
           <motion.div
-            className="flex items-center translate-x-10"
+            className="flex translate-x-10 items-center"
             variants={arrowMotion}
           >
             <ArrowRight />
@@ -73,7 +79,7 @@ export default function Navbar() {
         </motion.button>
 
         <motion.button
-          className="flex items-center gap-x-1 cursor-pointer pr-3 overflow-hidden"
+          className="flex cursor-pointer items-center gap-x-1 overflow-hidden pr-3"
           initial="rest"
           whileHover="hover"
           animate="rest"
@@ -86,7 +92,7 @@ export default function Navbar() {
           </motion.div>
         </motion.button>
         <motion.button
-          className="flex items-center gap-x-1 cursor-pointer pr-3 overflow-hidden"
+          className="flex cursor-pointer items-center gap-x-1 overflow-hidden pr-3"
           initial="rest"
           whileHover="hover"
           animate="rest"

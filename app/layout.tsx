@@ -14,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cabin.variable} ${coolveticaRg.variable}`}>
+      <body
+        className={`bg-[#f9f5f2] ${cabin.variable} ${coolveticaRg.variable}`}
+      >
         {children}
       </body>
     </html>

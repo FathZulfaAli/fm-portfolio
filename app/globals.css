@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.modal-content {
+  box-shadow: 3px 3px 0px #000; /* Bold shadow without spread */
+  border: 1.7px solid #000; /* Black border */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.cartoon-shadow {
+  box-shadow: 3.5px 3.5px 0px #000; /* Bold shadow without spread */
+  border: 2px solid #000; /* Black border */
 }
