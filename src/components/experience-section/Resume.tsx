@@ -7,8 +7,14 @@ import ArrowRight from "@/public/icons/arrow-right";
 import StyledButton from "../ui/StyledButton";
 import Link from "next/link";
 
-const iconUrl =
-  "https://cdn.prod.website-files.com/5e8c566954381032f62e178b/63f77e6470f86f13e576a175_product-design.png";
+const webDevIcon =
+  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/xpeiwgl98p0hjnvojrhn";
+
+const mobileDevicon =
+  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/isyxna9ownpk9qod7v6w";
+
+const projectManagerIcon =
+  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/ceoteljgcsekbaos0drb";
 
 const resumeIcon =
   "https://res.cloudinary.com/dzdrs7dkj/image/upload/v1733299470/fm-portfolio-assets/jeywssnibjnhophamhuy.png";
@@ -63,7 +69,7 @@ function Resume() {
       </h1>
       <div className="grid-col-3 my-20 grid justify-items-center gap-6 lg:mx-10 lg:grid-cols-3">
         <div className="cartoon-shadow flex h-[526px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
-          <Image src={iconUrl} alt="Logo" width={120} height={120} />
+          <Image src={projectManagerIcon} alt="Logo" width={120} height={120} />
           <div>
             <h1 className="font-coolvetica text-4xl">Lorem Ipsum Doloret</h1>
             <p className="mt-2 text-pretty text-lg">
@@ -91,7 +97,7 @@ function Resume() {
           </motion.button>
         </div>
         <div className="cartoon-shadow flex h-[526px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
-          <Image src={iconUrl} alt="Logo" width={120} height={120} />
+          <Image src={webDevIcon} alt="Logo" width={120} height={120} />
           <div>
             <h1 className="font-coolvetica text-4xl">Lorem Ipsum Doloret</h1>
             <p className="mt-2 text-pretty text-lg">
@@ -119,7 +125,7 @@ function Resume() {
           </motion.button>
         </div>
         <div className="cartoon-shadow flex h-[526px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
-          <Image src={iconUrl} alt="Logo" width={120} height={120} />
+          <Image src={mobileDevicon} alt="Logo" width={120} height={120} />
           <div>
             <h1 className="font-coolvetica text-4xl">Lorem Ipsum Doloret</h1>
             <p className="mt-2 text-pretty text-lg">
@@ -168,13 +174,19 @@ function Resume() {
                 <p className="text-md font-coolvetica">Resume</p>
                 <p className="text-3xl">View or Download Resume in PDF</p>
               </div>
-              {/* TODO: Add link to this Sty <StyledButton*/}
               <div className="flex justify-end">
-                <StyledButton
-                  color="red"
-                  text="Lets Check it"
-                  className="p-2"
-                />
+                <Link
+                  href={
+                    "https://drive.google.com/file/d/1_DSrPBfor5ZxdoSrmr9bfhD30U3MugdH/view"
+                  }
+                  target="_blank"
+                >
+                  <StyledButton
+                    color="red"
+                    text="Lets Check it"
+                    className="p-2"
+                  />
+                </Link>
               </div>
             </div>
             {/* Card 2 */}

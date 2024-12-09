@@ -1,8 +1,10 @@
 "use client";
 
 import ExperienceSection from "@/src/components/experience-section/ExperienceSection";
+import CollabForm from "@/src/components/footer/CollabForm";
+import Footer from "@/src/components/footer/Footer";
 import HeroSection from "@/src/components/hero-section/HeroSection";
-import Navbar from "@/src/components/hero-section/Navbar";
+import Navbar from "@/src/components/navigation-bar/Navbar";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <ExperienceSection />
+      <CollabForm />
+      <Footer />
     </main>
   );
 }
