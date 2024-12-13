@@ -21,13 +21,19 @@ const colorOption: Color = {
   white: "#fff",
 };
 
-type ButtonProps = {
+interface StyledButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color: keyof Color;
   text: string;
   className?: string;
-};
+}
 
-function StyledButton({ color, text, className = "px-5 py-3" }: ButtonProps) {
+function StyledButton({
+  color,
+  text,
+  className = "px-5 py-3",
+  ...props
+}: StyledButtonProps) {
   return (
     <motion.button
       style={{
@@ -51,6 +57,7 @@ function StyledButton({ color, text, className = "px-5 py-3" }: ButtonProps) {
       whileTap={{
         scale: 0.98, // Slightly scale down when clicked
       }}
+      {...props}
     >
       {text}
     </motion.button>
