@@ -62,7 +62,7 @@ function CollabForm() {
             functionality app,
           </h6>
           <h6 className="text-pretty">
-            I are here to turn your vision into reality.
+            I’m here to turn your vision into reality.
           </h6>
           <h6 className="text-pretty">
             Let’s create something amazing together!
