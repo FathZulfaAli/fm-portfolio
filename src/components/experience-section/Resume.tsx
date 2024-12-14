@@ -99,7 +99,7 @@ function Resume() {
         <div className="cartoon-shadow flex h-[526px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
           <Image src={webDevIcon} alt="Logo" width={120} height={120} />
           <div>
-            <h1 className="font-coolvetica text-4xl">Lorem Ipsum Doloret</h1>
+            <h1 className="font-coolvetica text-4xl">Web App Development</h1>
             <p className="mt-2 text-pretty text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -127,7 +127,7 @@ function Resume() {
         <div className="cartoon-shadow flex h-[526px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
           <Image src={mobileDevicon} alt="Logo" width={120} height={120} />
           <div>
-            <h1 className="font-coolvetica text-4xl">Lorem Ipsum Doloret</h1>
+            <h1 className="font-coolvetica text-4xl">Mobile Development</h1>
             <p className="mt-2 text-pretty text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -236,8 +236,13 @@ function Resume() {
                 <p className="text-lg">Web and Android Development</p>
               </div>
               <div className="flex justify-end">
-                {/* TODO: Add link to this Sty <StyledButton*/}
-                <StyledButton color="blue" text="Learn more" className="p-2" />
+                <Link href={"#tech-tools"}>
+                  <StyledButton
+                    color="blue"
+                    text="Learn more"
+                    className="p-2"
+                  />
+                </Link>
               </div>
             </div>
             {/* Card 4 */}
@@ -256,13 +261,7 @@ function Resume() {
                 <p className="text-lg">News Letter and Blog</p>
               </div>
               <div className="flex justify-end">
-                <Link href={"https://github.com/FathZulfaAli"} target="_blank">
-                  <StyledButton
-                    color="yellow"
-                    text="Soon"
-                    className="p-2 px-8"
-                  />
-                </Link>
+                <StyledButton color="yellow" text="Soon" className="p-2 px-8" />
               </div>
             </div>
             {/* Card 5 */}
@@ -281,12 +280,13 @@ function Resume() {
                 <p className="text-lg">All my masterpiece is here</p>
               </div>
               <div className="flex justify-end">
-                {/* TODO: Add link to this Sty <StyledButton*/}
-                <StyledButton
-                  color="pink"
-                  text="Let's go !!"
-                  className="p-2 px-5"
-                />
+                <Link href={"https://github.com/FathZulfaAli"} target="_blank">
+                  <StyledButton
+                    color="pink"
+                    text="Let's go !!"
+                    className="p-2 px-5"
+                  />
+                </Link>
               </div>
             </div>
           </div>

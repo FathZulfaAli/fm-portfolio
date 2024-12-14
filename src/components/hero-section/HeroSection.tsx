@@ -1,6 +1,7 @@
 import React from "react";
 import HeroImage from "./HeroImage";
 import StyledButton from "../ui/StyledButton";
+import Link from "next/link";
 
 function HeroSection() {
   return (
@@ -19,7 +20,11 @@ function HeroSection() {
           user experience.
         </h3>
         <div className="lg:mr-14 lg:mt-9 lg:place-self-end">
-          <StyledButton color="pink" text="Lets Collaborate" />
+          {/* <HandleScroll targetId={targetCollab}> */}
+          <Link href={"#collab-form"}>
+            <StyledButton color="pink" text="Lets Collaborate" />
+          </Link>
+          {/* </HandleScroll> */}
         </div>
       </div>
     </section>

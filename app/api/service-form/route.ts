@@ -6,11 +6,12 @@ import { readFileSync } from "fs";
 import Handlebars from "handlebars";
 
 const myEmail = process.env.SMTP_USER;
-const VIPEmail = process.env.NOTIFICATION_EMAI;
+const VIPEmail = process.env.NOTIFICATION_EMAIL;
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+    console.log("ini bodynyaaaaaaaa", body);
 
     const { clientEmail, clientName, description }: ClientEmailData = body;
 
@@ -24,7 +25,6 @@ export async function POST(request: Request) {
     const complileTemplate = Handlebars.compile(templateSource);
 
     // Confirmation email to the client
-    // TODO this is the design https://my.stripo.email/editor/v5/1510222/template/3664472
     await transporter.sendMail({
       from: myEmail,
       to: clientEmail,

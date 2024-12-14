@@ -3,26 +3,53 @@ import { Formik, Field, Form, FormikHelpers, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import StyledButton from "../ui/StyledButton";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 interface Values {
-  name: string;
-  email: string;
+  clientName: string;
+  clientEmail: string;
   description: string;
 }
 
+// TODO make it more friendly
 const SignupSchema = Yup.object().shape({
-  name: Yup.string().required("Name is required"),
-  email: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
-  // TODO make it more friendly
-  description: Yup.string().required("Please give me context"),
+  clientName: Yup.string().required("I’d love to know your name!"),
+  clientEmail: Yup.string()
+    .email("Hmm, that doesn't look like a valid email. Could you double-check?")
+    .required("I need your email to stay in touch!"),
+  description: Yup.string().required(
+    "Please share a brief description to help me understand better.",
+  ),
 });
+
+const handleSubmit = (
+  values: Values,
+  { setSubmitting }: FormikHelpers<Values>,
+) => {
+  setTimeout(() => {
+    setSubmitting(true);
+
+    axios
+      .post("/api/service-form", values)
+      .then((response) => {
+        console.log("Form submitted successfully:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+      })
+      .finally(() => {
+        setSubmitting(false);
+      });
+  }, 500);
+};
 
 function CollabForm() {
   return (
-    <div className="flex h-screen flex-row items-center justify-center py-20">
-      <div className="flex h-5/6 w-1/2 flex-col items-start justify-between">
+    <section
+      id={"collab-form"}
+      className="mt-60 flex h-screen flex-col items-center justify-center py-20 lg:mt-0 lg:flex-row"
+    >
+      <div className="flex h-5/6 w-5/6 flex-col items-start justify-between lg:w-1/2">
         <h1 className="font-coolvetica text-5xl text-[#282825]">
           Bring Your Concept to Life
         </h1>
@@ -35,13 +62,13 @@ function CollabForm() {
             functionality app,
           </h6>
           <h6 className="text-pretty">
-            I’m here to turn your vision into reality.
+            I are here to turn your vision into reality.
           </h6>
           <h6 className="text-pretty">
             Let’s create something amazing together!
           </h6>
         </div>
-        <div className="flex flex-col">
+        <div className="mt-5 flex flex-col">
           <h2>Email me at</h2>
           <StyledButton
             color="lime"
@@ -52,23 +79,20 @@ function CollabForm() {
         </div>
       </div>
 
-      <div className="flex h-5/6 items-start justify-start">
+      <div className="my-10 font-coolvetica text-3xl lg:my-0 lg:hidden">
+        <h1>Or</h1>
+        <h1>Fill up this form</h1>
+      </div>
+
+      <div className="mb-48 flex h-5/6 items-start justify-start lg:mb-0 lg:mt-10">
         <Formik
           initialValues={{
-            name: "",
-            email: "",
+            clientName: "",
+            clientEmail: "",
             description: "",
           }}
           validationSchema={SignupSchema}
-          onSubmit={(
-            values: Values,
-            { setSubmitting }: FormikHelpers<Values>,
-          ) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 500);
-          }}
+          onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
             <Form className="flex flex-col space-y-10">
@@ -93,14 +117,14 @@ function CollabForm() {
                   className="h-11 w-56 rounded-xl contain-content"
                 >
                   <Field
-                    id="name"
-                    name="name"
+                    id="clientName"
+                    name="clientName"
                     placeholder="Name"
                     className="w-56 rounded-xl border-none px-3 py-2 outline-none"
                   />
                 </motion.div>
                 <ErrorMessage
-                  name="name"
+                  name="clientName"
                   component="div"
                   className="absolute top-12 text-sm text-red-500"
                 />
@@ -127,14 +151,14 @@ function CollabForm() {
                   className="h-11 w-56 rounded-xl contain-content"
                 >
                   <Field
-                    id="email"
-                    name="email"
+                    id="clientEmail"
+                    name="clientEmail"
                     placeholder=" Email"
                     className="w-56 rounded-xl border-none px-3 py-2 outline-none"
                   />
                 </motion.div>
                 <ErrorMessage
-                  name="email"
+                  name="clientEmail"
                   component="div"
                   className="absolute top-12 text-sm text-red-500"
                 />
@@ -188,7 +212,7 @@ function CollabForm() {
           )}
         </Formik>
       </div>
-    </div>
+    </section>
   );
 }
 
