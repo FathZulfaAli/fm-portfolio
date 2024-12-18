@@ -122,7 +122,7 @@ function ProjectCard() {
         </div>
         <Image
           alt=""
-          className="rounded-xl object-contain"
+          className="rounded-xl object-cover"
           src={instantWisdomThumbnail}
           width={300}
           height={300}
