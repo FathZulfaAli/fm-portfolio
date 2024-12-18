@@ -63,21 +63,24 @@ export default function Navbar() {
       <BurgerMenu />
 
       {/* menu */}
+
       <div className="hidden flex-row gap-x-4 lg:flex">
-        <motion.button
-          className="flex cursor-pointer items-center overflow-hidden pr-3"
-          initial="rest"
-          whileHover="hover"
-          animate="rest"
-        >
-          <motion.div
-            className="flex translate-x-10 items-center"
-            variants={arrowMotion}
+        <Link href={"/#projects"}>
+          <motion.button
+            className="flex cursor-pointer items-center overflow-hidden pr-3"
+            initial="rest"
+            whileHover="hover"
+            animate="rest"
           >
-            <ArrowRight />
-          </motion.div>
-          <motion.div variants={textMotion}>My Work</motion.div>
-        </motion.button>
+            <motion.div
+              className="flex translate-x-10 items-center"
+              variants={arrowMotion}
+            >
+              <ArrowRight />
+            </motion.div>
+            <motion.div variants={textMotion}>My Work</motion.div>
+          </motion.button>
+        </Link>
 
         <Link href={"/about"}>
           <motion.button

@@ -16,7 +16,7 @@ function HeroSection() {
               strings: [
                 "FRONTEND DEVELOPER",
                 "PROJECT MANAGER",
-                "DIGITAL MARKETER",
+                "FULLSTACK DEVELOPER",
                 "BACKEND DEVELOPER",
               ],
               autoStart: true,

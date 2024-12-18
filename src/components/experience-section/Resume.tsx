@@ -6,30 +6,16 @@ import { motion } from "framer-motion";
 import ArrowRight from "@/public/icons/arrow-right";
 import StyledButton from "../ui/StyledButton";
 import Link from "next/link";
-
-const webDevIcon =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/xpeiwgl98p0hjnvojrhn";
-
-const mobileDevicon =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/isyxna9ownpk9qod7v6w";
-
-const projectManagerIcon =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/ceoteljgcsekbaos0drb";
-
-const resumeIcon =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/v1733299470/fm-portfolio-assets/jeywssnibjnhophamhuy.png";
-
-const muslimPrayperpalIcon =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/jxpvvw3psvmbtu0z5jvr";
-
-const techAndToolsImage =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/cusqztd7ew3q36o30hqx";
-
-const githubProfileImage =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/buzcrt6n5wzjucydzjke";
-
-const bloggingImage =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/g2oqqzexgzgd8rj9wgzn";
+import {
+  bloggingImage,
+  githubProfileImage,
+  mobileDevicon,
+  muslimPrayperpalIcon,
+  projectManagerIcon,
+  resumeIcon,
+  techAndToolsImage,
+  webDevIcon,
+} from "@/public/cdns/resume.cdn";
 
 const textMotion = {
   initial: {
@@ -68,89 +54,110 @@ function Resume() {
         Ways I Can Support You
       </h1>
       <div className="grid-col-3 my-20 grid justify-items-center gap-6 lg:mx-10 lg:grid-cols-3">
-        <div className="cartoon-shadow flex h-[526px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
-          <Image src={projectManagerIcon} alt="Logo" width={120} height={120} />
+        <div className="cartoon-shadow flex h-[600px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
           <div>
-            <h1 className="font-coolvetica text-4xl">Lorem Ipsum Doloret</h1>
-            <p className="mt-2 text-pretty text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <Image
+              src={projectManagerIcon}
+              alt="Logo"
+              width={120}
+              height={120}
+            />
+            <div>
+              <h1 className="font-coolvetica text-4xl">Project Management</h1>
+              <p className="mt-2 text-pretty text-lg">
+                I can manage your projects from start to finish,
+                <br />
+                <br />
+                Ensuring smooth workflows, effective communication, and timely
+                delivery. By leveraging agile methodologies and effective
+                communication,
+              </p>
+            </div>
           </div>
-          <motion.button
-            className="flex cursor-pointer items-center overflow-hidden pr-3"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-          >
-            <motion.div variants={textMotion} className="font-coolvetica">
-              Learn More
-            </motion.div>
-            <motion.div
-              className="flex translate-x-20 items-center"
-              variants={arrowMotion}
+          <Link href={"#collab-form"}>
+            <motion.button
+              className="flex cursor-pointer items-center overflow-hidden pr-3"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
             >
-              <ArrowRight />
-            </motion.div>
-          </motion.button>
+              <motion.div variants={textMotion} className="font-coolvetica">
+                Whats the project ?
+              </motion.div>
+              <motion.div
+                className="flex translate-x-20 items-center"
+                variants={arrowMotion}
+              >
+                <ArrowRight />
+              </motion.div>
+            </motion.button>
+          </Link>
         </div>
-        <div className="cartoon-shadow flex h-[526px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
-          <Image src={webDevIcon} alt="Logo" width={120} height={120} />
+        <div className="cartoon-shadow flex h-[600px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
           <div>
-            <h1 className="font-coolvetica text-4xl">Web App Development</h1>
-            <p className="mt-2 text-pretty text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <Image src={webDevIcon} alt="Logo" width={120} height={120} />
+            <div>
+              <h1 className="font-coolvetica text-4xl">Web App Development</h1>
+              <p className="mt-2 text-pretty text-lg">
+                I can develop custom web applications tailored to your needs.
+                <br />
+                <br />I specialize in creating responsive and feature-rich web
+                applications that deliver user experiences. Whether it’s an
+                single landing page, a custom dashboard, or a dynamic web
+                application,
+              </p>
+            </div>
           </div>
-          <motion.button
-            className="flex cursor-pointer items-center overflow-hidden pr-3"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-          >
-            <motion.div variants={textMotion} className="font-coolvetica">
-              Learn More
-            </motion.div>
-            <motion.div
-              className="flex translate-x-20 items-center"
-              variants={arrowMotion}
+          <Link href={"#collab-form"}>
+            <motion.button
+              className="flex cursor-pointer items-center overflow-hidden pr-3"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
             >
-              <ArrowRight />
-            </motion.div>
-          </motion.button>
+              <motion.div variants={textMotion} className="font-coolvetica">
+                Lets Collab
+              </motion.div>
+              <motion.div
+                className="flex translate-x-20 items-center"
+                variants={arrowMotion}
+              >
+                <ArrowRight />
+              </motion.div>
+            </motion.button>
+          </Link>
         </div>
-        <div className="cartoon-shadow flex h-[526px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
-          <Image src={mobileDevicon} alt="Logo" width={120} height={120} />
+        <div className="cartoon-shadow flex h-[600px] w-5/6 flex-col justify-between rounded-2xl bg-white p-5">
           <div>
-            <h1 className="font-coolvetica text-4xl">Mobile Development</h1>
-            <p className="mt-2 text-pretty text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <Image src={mobileDevicon} alt="Logo" width={120} height={120} />
+            <div>
+              <h1 className="font-coolvetica text-4xl">Mobile Development</h1>
+              <p className="mt-2 text-pretty text-lg">
+                I can build mobile apps for iOS and Android using React Native
+                Expo. Whether it’s a personal idea or a business solution, I
+                deliver intuitive, high-performance applications that engage
+                users.
+              </p>
+            </div>
           </div>
-          <motion.button
-            className="flex cursor-pointer items-center overflow-hidden pr-3"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-          >
-            <motion.div variants={textMotion} className="font-coolvetica">
-              Learn More
-            </motion.div>
-            <motion.div
-              className="flex translate-x-20 items-center"
-              variants={arrowMotion}
+          <Link href={"#collab-form"}>
+            <motion.button
+              className="flex cursor-pointer items-center overflow-hidden pr-3"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
             >
-              <ArrowRight />
-            </motion.div>
-          </motion.button>
+              <motion.div variants={textMotion} className="font-coolvetica">
+                Learn more
+              </motion.div>
+              <motion.div
+                className="flex translate-x-20 items-center"
+                variants={arrowMotion}
+              >
+                <ArrowRight />
+              </motion.div>
+            </motion.button>
+          </Link>
         </div>
       </div>
       <section className="flex flex-col items-center justify-center">
@@ -184,7 +191,7 @@ function Resume() {
                   <StyledButton
                     color="red"
                     text="Lets Check it"
-                    className="p-2"
+                    className="rounded-md p-2"
                   />
                 </Link>
               </div>
@@ -213,7 +220,7 @@ function Resume() {
                   <StyledButton
                     color="white"
                     text="Learn more"
-                    className="p-2"
+                    className="rounded-md p-2"
                   />
                 </Link>
               </div>
@@ -240,7 +247,7 @@ function Resume() {
                   <StyledButton
                     color="blue"
                     text="Learn more"
-                    className="p-2"
+                    className="rounded-md p-2"
                   />
                 </Link>
               </div>
@@ -261,7 +268,11 @@ function Resume() {
                 <p className="text-lg">News Letter and Blog</p>
               </div>
               <div className="flex justify-end">
-                <StyledButton color="yellow" text="Soon" className="p-2 px-8" />
+                <StyledButton
+                  color="yellow"
+                  text="Soon"
+                  className="rounded-md p-2 px-8"
+                />
               </div>
             </div>
             {/* Card 5 */}
@@ -284,7 +295,7 @@ function Resume() {
                   <StyledButton
                     color="pink"
                     text="Let's go !!"
-                    className="p-2 px-5"
+                    className="rounded-md p-2 px-5"
                   />
                 </Link>
               </div>

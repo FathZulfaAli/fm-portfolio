@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ArrowRight from "@/public/icons/arrow-right";
+import Link from "next/link";
 
 type ModalMenuProps = {
   isOpen: boolean;
@@ -47,31 +48,36 @@ function ModalMenu({ isOpen }: ModalMenuProps) {
     >
       <div className="modal-content w-11/12 rounded-3xl border-black bg-white p-6">
         <div className="flex -translate-x-5 flex-col gap-y-4">
-          <motion.button
-            className="flex cursor-pointer items-center gap-x-1 overflow-hidden pr-3"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-          >
-            <motion.div className="flex items-center" variants={arrowMotion}>
-              <ArrowRight />
-            </motion.div>
-            <motion.div variants={textMotion}> My Work</motion.div>
-          </motion.button>
+          <Link href={"/#projects"}>
+            <motion.button
+              className="flex cursor-pointer items-center gap-x-1 overflow-hidden pr-3"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+            >
+              <motion.div className="flex items-center" variants={arrowMotion}>
+                <ArrowRight />
+              </motion.div>
+              <motion.div variants={textMotion}> My Work</motion.div>
+            </motion.button>
+          </Link>
 
-          <motion.button
-            className="flex cursor-pointer items-center gap-x-1 overflow-hidden pr-3"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-          >
-            <motion.div className="flex items-center" variants={arrowMotion}>
-              <ArrowRight />
-            </motion.div>
-            <motion.div className="-translate-x-1" variants={textMotion}>
-              About me
-            </motion.div>
-          </motion.button>
+          <Link href={"/about"}>
+            <motion.button
+              className="flex cursor-pointer items-center gap-x-1 overflow-hidden pr-3"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+            >
+              <motion.div className="flex items-center" variants={arrowMotion}>
+                <ArrowRight />
+              </motion.div>
+              <motion.div className="-translate-x-1" variants={textMotion}>
+                About me
+              </motion.div>
+            </motion.button>
+          </Link>
+
           <motion.button
             className="flex cursor-pointer items-center gap-x-1 overflow-hidden pr-3"
             initial="rest"

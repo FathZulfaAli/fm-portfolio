@@ -5,7 +5,7 @@ import React from "react";
 export default function About() {
   return (
     <section className="px-20">
-      <div className="flex flex-row items-center justify-between gap-x-10">
+      <div className="flex flex-col-reverse items-center gap-x-10 lg:flex-row lg:justify-between">
         <div className="max-w-2xl">
           <h1 className="font-coolvetica text-7xl">About me</h1>
           <div className="space-y-3 pt-10 text-lg">
@@ -39,7 +39,8 @@ export default function About() {
               results.
             </h6>
             <h6 className="text-pretty">
-              Let’s create something amazing together!
+              Finally, I graduated from college in October 2023 achieving{" "}
+              <b>3.62 on GPA</b>
             </h6>
           </div>
         </div>
@@ -61,16 +62,16 @@ export default function About() {
       </div>
       <div className="pt-5 text-lg">
         <h6 className="text-pretty">
-          Since April 2024, I have been working as a Fullstack Developer., I
-          have been working remotely as a freelancer . I specialize in building
-          web applications using <b>Next.js</b>, <b>React</b>, <b>TypeScript</b>
-          , and <b>JavaScript</b>, developing and integrating frontend
-          components with seamless interaction with serverless functions. I am
-          proficient in <b>state management</b> using React Reducer and Zustand
-          and have experience creating mobile applications with{" "}
-          <b>React Native Expo</b> and <b>NativeWind</b>. Additionally, I am
-          skilled in working with APIs, including fetching, manipulating, and
-          integrating data to deliver dynamic and functional user experiences.
+          Since then, I have been working as a Fullstack Developer., I have been
+          working remotely as a freelancer . I specialize in building web
+          applications using <b>Next.js</b>, <b>React</b>, <b>TypeScript</b>,
+          and <b>JavaScript</b>, developing and integrating frontend components
+          with seamless interaction with serverless functions. I am proficient
+          in <b>state management</b> using React Reducer and Zustand and have
+          experience creating mobile applications with <b>React Native Expo</b>{" "}
+          and <b>NativeWind</b>. Additionally, I am skilled in working with
+          APIs, including fetching, manipulating, and integrating data to
+          deliver dynamic and functional user experiences.
         </h6>
       </div>
     </section>

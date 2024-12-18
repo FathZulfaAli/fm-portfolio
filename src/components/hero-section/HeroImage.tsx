@@ -3,12 +3,8 @@ import React from "react";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import SmoothTriangle from "@/public/icons/smooth-triangle";
 import StyledButton from "../ui/StyledButton";
-
-const flyingThingsUrl =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/qf0wus2z3o7downd2s8y";
-
-const heroPhoto =
-  "https://res.cloudinary.com/dzdrs7dkj/image/upload/f_auto,q_auto/v1/fm-portfolio-assets/iu0ed4ajj3cydjfdaczg";
+import Link from "next/link";
+import { flyingThingsUrl, heroPhoto } from "@/public/cdns/heroImage.cdn";
 
 function HeroImage() {
   const windowSize = useWindowSize();
@@ -32,11 +28,13 @@ function HeroImage() {
         <div className="absolute bottom-24 left-[165px]">
           <SmoothTriangle />
         </div>
-        <StyledButton
-          color="pink"
-          text="Open to work"
-          className="absolute bottom-16 left-48 h-7 min-w-40 rounded-full px-0 font-extrabold lg:disabled:cursor-default"
-        />
+        <Link href={"https://www.linkedin.com/in/fathzulfaali/"}>
+          <StyledButton
+            color="pink"
+            text="Open to work"
+            className="absolute bottom-16 left-48 h-7 min-w-40 rounded-full px-0 font-extrabold lg:disabled:cursor-default"
+          />
+        </Link>
       </div>
     </>
   );

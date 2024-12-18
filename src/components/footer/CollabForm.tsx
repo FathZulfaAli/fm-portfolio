@@ -11,7 +11,6 @@ interface Values {
   description: string;
 }
 
-// TODO make it more friendly
 const SignupSchema = Yup.object().shape({
   clientName: Yup.string().required("I’d love to know your name!"),
   clientEmail: Yup.string()

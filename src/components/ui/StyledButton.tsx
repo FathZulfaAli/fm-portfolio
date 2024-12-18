@@ -31,7 +31,7 @@ interface StyledButtonProps
 function StyledButton({
   color,
   text,
-  className = "px-5 py-3",
+  className = "px-5 py-3 rounded-xl",
   ...props
 }: StyledButtonProps) {
   return (
@@ -40,7 +40,6 @@ function StyledButton({
         backgroundColor: colorOption[color], // Apply color dynamically
         // padding: "10px 20px",
         border: "2px solid #000", // Corrected the border definition
-        borderRadius: "5px",
         color: "black",
         cursor: "pointer",
         width: "fit-content",
