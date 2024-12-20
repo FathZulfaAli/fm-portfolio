@@ -24,23 +24,30 @@ function Footer() {
           <h2 className="font-coolvetica text-xl">Wep App Developer</h2>
         </div>
       </div>
-      <div className="my-5 flex flex-col items-center lg:my-0">
-        <p className="self-center lg:self-start">Follow:</p>
-        <div className="flex flex-row gap-x-3">
-          <Link
-            href={"https://www.linkedin.com/in/fathzulfaali/"}
-            target="_blank"
-          >
-            <LinkedIn width={24} height={24} />
-          </Link>
-          <Link
-            href={"https://www.instagram.com/fathandmayang"}
-            target="_blank"
-          >
-            <Instagram width={24} height={24} />
-          </Link>
-          <Link href={"https://github.com/FathZulfaAli"} target="_blank">
-            <Github width={24} height={24} />
+      <div className="my-5 flex flex-row items-center gap-x-5 lg:my-0">
+        <div className="flex flex-col">
+          <p className="self-center lg:self-start">Follow:</p>
+          <div className="flex flex-row gap-x-3">
+            <Link
+              href={"https://www.linkedin.com/in/fathzulfaali/"}
+              target="_blank"
+            >
+              <LinkedIn width={24} height={24} />
+            </Link>
+            <Link
+              href={"https://www.instagram.com/fathandmayang"}
+              target="_blank"
+            >
+              <Instagram width={24} height={24} />
+            </Link>
+            <Link href={"https://github.com/FathZulfaAli"} target="_blank">
+              <Github width={24} height={24} />
+            </Link>
+          </div>
+        </div>
+        <div>
+          <Link href="/privacy-policy" className="text-[#52514e]">
+            Privacy Policy
           </Link>
         </div>
       </div>
