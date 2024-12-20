@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -23,10 +24,10 @@ const nextConfig: NextConfig = {
     ],
   },
   webpack: (config) => {
-    config.module.rules.push({
-      test: /\.handlebars$/,
-      loader: "handlebars-loader",
-    });
+    config.resolve.alias["handlebars"] = path.resolve(
+      "./node_modules/handlebars/dist/cjs/handlebars.js",
+    );
+
     return config;
   },
 };
