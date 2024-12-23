@@ -201,11 +201,12 @@ function CollabForm() {
 
               <div className="self-end">
                 <StyledButton
-                  color="pink"
-                  text={isSubmitting ? "Submitting..." : "Submit"}
+                  color="red"
+                  text={isSubmitting ? "Submitting..." : "Under Maintenance 🚧"}
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={true}
                 />
+                <h1>Email me instead</h1>
               </div>
             </Form>
           )}
