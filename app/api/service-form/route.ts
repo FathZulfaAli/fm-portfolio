@@ -9,31 +9,37 @@ export async function POST(request: Request) {
     const notificationEmail = process.env.NOTIFICATION_EMAIL;
 
     if (!privateKey || !notificationEmail) {
-      return NextResponse.json({
-        status: 500,
-        error: "Please contact me to fix the problem.",
-      });
+      return NextResponse.json(
+        {
+          error: "Please contact me to fix the problem.",
+        },
+        { status: 500 },
+      );
     }
 
     const body = await request.json();
     const { clientEmail, clientName, description }: ClientEmailData = body;
     const resend = new Resend(privateKey);
 
-    resend.emails.send({
+    await resend.emails.send({
       from: "Fath Tech Web <onboarding@resend.dev>",
       to: notificationEmail,
       subject: `New Submission Received from ${clientName}`,
       text: `A new submission has been received:\n\nName: ${clientName}\nEmail: ${clientEmail}\nDescription: ${description}`,
     });
 
-    return NextResponse.json({
-      status: 200,
-      message: "Emails sent successfully!",
-    });
+    return NextResponse.json(
+      {
+        message: "Emails sent successfully!",
+      },
+      { status: 200 },
+    );
   } catch (error) {
-    return NextResponse.json({
-      status: 500,
-      error: error || "An error occurred while sending emails.",
-    });
+    return NextResponse.json(
+      {
+        error: error || "An error occurred while sending emails.",
+      },
+      { status: 500 },
+    );
   }
 }

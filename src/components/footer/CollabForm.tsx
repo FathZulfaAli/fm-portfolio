@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import StyledButton from "../ui/StyledButton";
 import { motion } from "framer-motion";
 import axios from "axios";
+import Link from "next/link";
 
 interface Values {
   clientName: string;
@@ -206,7 +207,9 @@ function CollabForm() {
                   type="submit"
                   disabled={true}
                 />
-                <h1>Email me instead</h1>
+                <Link href="mailto:f.zulfaali@gmail.com">
+                  <h1>Email me instead</h1>
+                </Link>
               </div>
             </Form>
           )}
