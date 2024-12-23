@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cabin, coolveticaRg } from "@/public/fonts/fonts";
 
+// TODO improve SEO and Metadata
 export const metadata: Metadata = {
   title: "🚀 Turning Ideas into Digital Reality 🤙 Fath Zulfa",
   description:

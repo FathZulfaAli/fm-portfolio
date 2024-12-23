@@ -4,17 +4,20 @@ import StyledButton from "../ui/StyledButton";
 import {
   instantWisdomThumbnail,
   iqWalletThumbnail,
+  muslimPrayerpalThumbnail,
 } from "@/public/cdns/projectCard.cdn";
-
-const testImage = "https://placehold.co/300x300/png";
+import Link from "next/link";
 
 function ProjectCard() {
   return (
     <div className="mt-10 flex flex-col items-center justify-center gap-y-5">
-      {/* Muslim PrayerPal TODO add thumbnail */}
       <div className="mx-6 flex flex-col-reverse justify-between rounded-2xl border border-black p-3 lg:mx-0 lg:w-7/12 lg:flex-row">
         <div className="flex flex-col text-pretty pb-5 pl-5 pt-5 lg:w-1/2">
-          <h1 className="pb-3 font-coolvetica text-4xl">Muslim Prayerpal</h1>
+          <Link href="https://github.com/FathMayangLabs/muslim-prayerpal">
+            <h1 className="pb-3 font-coolvetica text-4xl">
+              🔗 Muslim Prayerpal
+            </h1>
+          </Link>
           <p>
             Muslim PrayerPal is a comprehensive Islamic lifestyle app designed
             to support your spiritual journey. The app offers: Accurate Prayer
@@ -47,7 +50,7 @@ function ProjectCard() {
         <Image
           alt=""
           className="rounded-xl object-contain"
-          src={testImage}
+          src={muslimPrayerpalThumbnail}
           width={300}
           height={300}
         />
@@ -89,7 +92,9 @@ function ProjectCard() {
 
       <div className="mx-6 flex flex-col-reverse justify-between rounded-2xl border border-black p-3 lg:mx-0 lg:w-7/12 lg:flex-row">
         <div className="flex flex-col text-pretty pb-5 pl-5 pt-5 lg:w-1/2">
-          <h1 className="pb-3 font-coolvetica text-4xl">Instant Wisdom</h1>
+          <Link href="https://instant-wisdom.vercel.app/">
+            <h1 className="pb-3 font-coolvetica text-4xl">🔗 Instant Wisdom</h1>
+          </Link>
           <p>
             Instant Wisdom is a unique app designed to deliver daily doses of
             inspiration, motivation, and guidance right to user fingertips. this
