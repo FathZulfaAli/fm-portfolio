@@ -1,6 +1,7 @@
 import React from "react";
 
 import ProjectCard from "./ProjectCard";
+import Link from "next/link";
 
 function Projects() {
   return (
@@ -17,6 +18,14 @@ function Projects() {
         </div>
         <div></div>
         <ProjectCard />
+        <Link
+          href="https://www.linkedin.com/in/fathzulfaali/#projects"
+          target="_blank"
+        >
+          <h6 className="text-pretty pt-10 font-cabin text-xl">
+            And many more...
+          </h6>
+        </Link>
       </section>
     </>
   );
